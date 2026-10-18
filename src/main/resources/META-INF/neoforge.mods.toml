@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mods]]
+modId="neos_rs_disk_accelerator"
+version="1.0.0"
+displayName="Neos RS Disk Accelerator"
+description="Bounded configurable item quota for the original RS 2.0.9 Disk Manipulator. No new blocks."
+[[mixins]]
+config="neos_rs_disk_accelerator.mixins.json"
+[[dependencies.neos_rs_disk_accelerator]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.251,21.2)"
+side="BOTH"
+[[dependencies.neos_rs_disk_accelerator]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+side="BOTH"
+[[dependencies.neos_rs_disk_accelerator]]
+modId="refinedstorage"
+type="required"
+versionRange="[2.0.9]"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,1 @@
+{"required":true,"minVersion":"0.8","package":"de.neoscolony.rsaccelerator.mixin","compatibilityLevel":"JAVA_21","mixins":["DiskInterfaceQuotaMixin","EmptyBudgetMixin","TransferDiagnosticsMixin"],"injectors":{"defaultRequire":1}}

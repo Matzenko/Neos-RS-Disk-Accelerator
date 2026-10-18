@@ -1,0 +1,29 @@
+plugins {
+ id 'java-library'
+ id 'net.neoforged.moddev' version '2.0.147'
+}
+version='1.0.0'
+group='de.neoscolony.rsaccelerator'
+base { archivesName='neos-rs-disk-accelerator' }
+java.toolchain.languageVersion=JavaLanguageVersion.of(21)
+repositories {
+ ivy {
+  url='https://github.com/refinedmods/refinedstorage2/releases/download'
+  patternLayout { artifact 'v[revision]/[artifact]-[revision].[ext]' }
+  metadataSources { artifact() }
+  content { includeModule 'com.refinedmods','refinedstorage-neoforge' }
+ }
+}
+dependencies { compileOnly 'com.refinedmods:refinedstorage-neoforge:2.0.9' }
+neoForge {
+ version='21.1.251'
+ mods { neos_rs_disk_accelerator { sourceSet(sourceSets.main) } }
+}
+tasks.withType(JavaCompile).configureEach {
+ options.encoding='UTF-8'
+ options.compilerArgs+=['-proc:none']
+}
+tasks.withType(AbstractArchiveTask).configureEach {
+ preserveFileTimestamps=false
+ reproducibleFileOrder=true
+}
